@@ -43,7 +43,7 @@ class LoginScreen extends Component {
         if (field == "email") {
             const email = value;
             const password = this.state.password;
-            if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email) && password != "") {
+            if (email != "" && password != "") {
                 this.setState({
                     button: true
                 })
@@ -55,7 +55,7 @@ class LoginScreen extends Component {
         } else {
             const email = this.state.email;
             const password = value;
-            if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email) && password != "") {
+            if (email != "" && password != "") {
                 this.setState({
                     button: true
                 })
@@ -125,24 +125,16 @@ class LoginScreen extends Component {
         return (
 
             <Container>
-                <View style={styles.head}>
-                    <Button bordered light style={styles.buttonRegiser} onPress={() => { this.props.navigation.navigate('Register') }}>
-                        <Text style={styles.textRegister}>Register</Text>
-                    </Button>
-                </View>
                 <View style={styles.container}>
-                    <Image style={styles.image}
-                        source={{ uri: 'https://covrprice.com/wp-content/themes/covr/assets/images/comic_stack.png' }}
-                    />
                     <Text style={styles.login}>
-                        COMIC COLLECTORS
+                        HOTEL MELATI
                     </Text>
                     <Text style={styles.login_desc}>
                         Login With Your Account
                     </Text>
                     <Form>
                         <Item stackedLabel>
-                            <Label style={styles.white_label}>Email</Label>
+                            <Label style={styles.white_label}>Username</Label>
                             <Input onChangeText={this.setEmail} style={styles.emailFied} />
                         </Item>
                         <Item stackedLabel>
@@ -173,7 +165,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'rgb(34,193,195)',
+        backgroundColor: 'grey',
     },
     login: {
         fontSize: 25,
@@ -217,4 +209,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(LoginScreen);
+)(LoginScreen); 
