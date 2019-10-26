@@ -4,27 +4,26 @@ const initialState = {
     isLoading: false,
     isError: false,
     isSuccess: false,
-    search: []
+    room: []
 };
 
-export default function reducerSearch(state = initialState, action) {
+export default function reducerInsertRoom(state = initialState, action) {
     switch (action.type) {
-        case `${types.GET_USERS_SEARCH}_PENDING`:
+        case `${types.INSERT_USERS_ROOM}_PENDING`:
             return {
                 ...state,
                 isLoading: true
             };
-
-        case `${types.GET_USERS_SEARCH}_FULFILLED`:
+        case `${types.INSERT_USERS_ROOM}_FULFILLED`:
             console.log('tes');
             return {
                 ...state,
                 isLoading: false,
                 isSuccess: true,
-                search: action.payload.data
+                room: action.payload.data
             };
 
-        case `${types.GET_USERS_SEARCH}_REJECTED`:
+        case `${types.INSERT_USERS_ROOM}_REJECTED`:
             return {
                 ...state,
                 isLoading: false,
@@ -34,4 +33,4 @@ export default function reducerSearch(state = initialState, action) {
         default:
             return state;
     }
-}    
+}   

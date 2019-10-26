@@ -22,7 +22,11 @@ app.use(bodyParser.json());
 
 app.group("/api/v2", (router) => {
 
-    router.get('/tes', users.tes);
+    router.post('/rooms', users.insertRoom);
+    router.get('/rooms', users.getRoom);
+    router.put('/rooms/:id/', users.UpdateRoom);
+
+    router.get('/customers', users.getCustomer);
     router.post('/login', users.signin);
     router.post('/register', users.register);
 

@@ -4,26 +4,27 @@ const initialState = {
     isLoading: false,
     isError: false,
     isSuccess: false,
-    create: []
+    room: []
 };
 
-export default function reducerCreate(state = initialState, action) {
+export default function reducerRoom(state = initialState, action) {
     switch (action.type) {
-        case `${types.GET_USERS_CREATE}_PENDING`:
+        case `${types.GET_USERS_ROOM}_PENDING`:
             return {
                 ...state,
                 isLoading: true
             };
-        case `${types.GET_USERS_CREATE}_FULFILLED`:
+
+        case `${types.GET_USERS_ROOM}_FULFILLED`:
             console.log('tes');
             return {
                 ...state,
                 isLoading: false,
                 isSuccess: true,
-                create: action.payload.data
+                room: action.payload.data
             };
 
-        case `${types.GET_USERS_CREATE}_REJECTED`:
+        case `${types.GET_USERS_ROOM}_REJECTED`:
             return {
                 ...state,
                 isLoading: false,

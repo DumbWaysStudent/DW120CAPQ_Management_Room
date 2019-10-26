@@ -4,26 +4,26 @@ const initialState = {
     isLoading: false,
     isError: false,
     isSuccess: false,
-    creation: []
+    update: []
 };
 
-export default function reducerEpisode(state = initialState, action) {
+export default function reducerUpdateRoom(state = initialState, action) {
     switch (action.type) {
-        case `${types.GET_USERS_CREATION}_PENDING`:
+        case `${types.UPDATE_USERS_ROOM}_PENDING`:
             return {
                 ...state,
                 isLoading: true
             };
-        case `${types.GET_USERS_CREATION}_FULFILLED`:
+        case `${types.UPDATE_USERS_ROOM}_FULFILLED`:
             console.log('tes');
             return {
                 ...state,
                 isLoading: false,
                 isSuccess: true,
-                creation: action.payload.data
+                update: action.payload.data
             };
 
-        case `${types.GET_USERS_CREATION}_REJECTED`:
+        case `${types.UPDATE_USERS_ROOM}_REJECTED`:
             return {
                 ...state,
                 isLoading: false,

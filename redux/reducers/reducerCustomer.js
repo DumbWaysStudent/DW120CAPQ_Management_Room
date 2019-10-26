@@ -4,27 +4,27 @@ const initialState = {
     isLoading: false,
     isError: false,
     isSuccess: false,
-    favourite: []
+    customer: []
 };
 
-export default function reducerTodos(state = initialState, action) {
+export default function reducerCustomer(state = initialState, action) {
     switch (action.type) {
-        case `${types.GET_USERS_FAV}_PENDING`:
+        case `${types.GET_USERS_CUSTOMER}_PENDING`:
             return {
                 ...state,
                 isLoading: true
             };
 
-        case `${types.GET_USERS_FAV}_FULFILLED`:
+        case `${types.GET_USERS_CUSTOMER}_FULFILLED`:
             console.log('tes');
             return {
                 ...state,
                 isLoading: false,
                 isSuccess: true,
-                favourite: action.payload.data
+                customer: action.payload.data
             };
 
-        case `${types.GET_USERS_FAV}_REJECTED`:
+        case `${types.GET_USERS_CUSTOMER}_REJECTED`:
             return {
                 ...state,
                 isLoading: false,
@@ -34,4 +34,4 @@ export default function reducerTodos(state = initialState, action) {
         default:
             return state;
     }
-}   
+}    

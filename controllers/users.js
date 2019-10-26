@@ -1,9 +1,35 @@
 const users = require('../models').users;
+const room = require('../models').room;
+const customer = require('../models').customer;
 const jwt = require('jsonwebtoken');
 
-exports.tes = (req, res) => {
-    res.send('okkkk');
+exports.getRoom = (req, res) => {
+    room.findAll().then(data => res.send(data))
 }
+exports.getCustomer = (req, res) => {
+    customer.findAll().then(data => res.send(data))
+}
+
+
+
+exports.insertRoom = (req, res) => {
+    room.create(req.body).then(result => {
+        res.send(result)
+    })
+}
+
+exports.UpdateRoom = (req, res) => {
+    room.update(
+        req.body,
+        { where: req.params }
+    ).then(webtoon => {
+        res.send({
+            message: "success",
+            ...req.body
+        })
+    })
+}
+
 
 exports.register = (req, res) => {
     users.create(req.body).then(result => {

@@ -13,6 +13,11 @@ import { createBottomTabNavigator } from 'react-navigation-tabs';
 
 import CheckinScreen from '../src/screen/CheckinScreen';
 import RoomScreen from '../src/screen/RoomScreen';
+import InsertRoomScreen from '../src/screen/InsertRoomScreen';
+import UpdateRoomScreen from '../src/screen/UpdateRoomScreen';
+import UpdatingRoomScreens from '../src/screen/UpdatingRoomScreens';
+
+
 import CustomerScreen from '../src/screen/CustomerScreen';
 import SettingScreen from '../src/screen/SettingScreen';
 import LoginScreen from '../src/screen/LoginScreen';
@@ -54,7 +59,7 @@ const TabNavigator = createBottomTabNavigator({
                 <Icon type="FontAwesome" name="th-large" size={25} />
             )
         }
-    }
+    },
 }, {
     tabBarOptions: {
         activeTintColor: 'grey',
@@ -80,11 +85,29 @@ const AppNavigator = createStackNavigator(
             navigationOptions: {
                 header: null
             }
+        },
+        InsertRoom: {
+            screen: InsertRoomScreen,
+            navigationOptions: {
+                header: null
+            }
+        },
+        UpdatingRoom: {
+            screen: UpdateRoomScreen,
+            navigationOptions: {
+                header: null
+            }
+        },
+        Updating: {
+            screen: UpdatingRoomScreens,
+            navigationOptions: {
+                header: null
+            }
         }
 
     },
     {
-        initialRouteName: 'Checkin',
+        initialRouteName: 'Login',
         defaultNavigationOptions: {
             headerTitleStyle: {
                 fontWeight: 'bold',
