@@ -1,9 +1,8 @@
 const users = require('../models').users;
 const jwt = require('jsonwebtoken');
 
-
-exports.tes = (req, res) => {
-    res.send('konek');
+exports.index = (req, res) => {
+    users.findAll().then(todos => res.send(todos))
 }
 
 exports.register = (req, res) => {
@@ -11,7 +10,9 @@ exports.register = (req, res) => {
         var generateToken = jwt.sign({ name: req.body.name }, 'my-secret-key');
         res.send({
             "username": result.username,
-            "token": generateToken
+            "id": result.id.toString(),
+            "token": generateToken,
+            "status": 'ok'
         })
     })
 }

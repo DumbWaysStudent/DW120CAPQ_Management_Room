@@ -16,9 +16,9 @@
     "operatorsAliases": false
   },
   "production": {
-    "username": "hotel",
+    "username": "root",
     "password": null,
-    "database": "webtoon",
+    "database": "hotel",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false
