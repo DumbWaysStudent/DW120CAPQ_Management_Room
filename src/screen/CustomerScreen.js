@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 
 import * as actionUsers from '../../redux/actions/actionUsers'
 
-export default class HomeScreen extends React.Component {
+export default class CustomerScreen extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -18,7 +18,7 @@ export default class HomeScreen extends React.Component {
             <Container style={styles.container}>
                 <Content>
                     <View>
-                        <Text>Home Screen</Text>
+                        <Text>Customer Screen</Text>
                     </View>
                 </Content>
             </Container >

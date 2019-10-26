@@ -1,8 +1,8 @@
 const users = require('../models').users;
 const jwt = require('jsonwebtoken');
 
-exports.index = (req, res) => {
-    users.findAll().then(todos => res.send(todos))
+exports.tes = (req, res) => {
+    res.send('okkkk');
 }
 
 exports.register = (req, res) => {
